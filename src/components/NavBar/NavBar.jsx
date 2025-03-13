@@ -19,6 +19,9 @@ const NavBar = () => {
             <Link to='/consoles'>Consoles</Link>
           </li>
           <li>
+            <Link to='/consoles/new'>Add Console</Link>
+          </li>
+          <li>
             <Link to='/'>Dashboard</Link>
           </li>
           <li>

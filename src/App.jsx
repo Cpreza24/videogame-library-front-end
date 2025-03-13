@@ -7,6 +7,7 @@ import SignInForm from './components/SignInForm/SignInForm';
 import Landing from './components/Landing/Landing';
 import Dashboard from './components/Dashboard/Dashboard';
 import ConsoleList from './components/ConsoleList/ConsoleList';
+import ConsoleForm from './components/ConsoleForm/ConsoleForm';
 import * as consoleService from './services/consoleService';
 import { UserContext } from './contexts/UserContext';
 
@@ -14,6 +15,12 @@ const App = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
   const [consoles, setConsoles] = useState([]);
+
+  const handleAddConsole = async (consoleFormData) => {
+    const newConsole = await consoleService.create(consoleFormData);
+    setConsoles([newConsole, ...consoles]);
+    navigate('/consoles');
+  };
 
   useEffect(() => {
     const fetchAllConsoles = async () => {
@@ -33,6 +40,10 @@ const App = () => {
             <Route
               path='/consoles'
               element={<ConsoleList consoles={consoles} />}
+            />
+            <Route
+              path='/consoles/new'
+              element={<ConsoleForm handleAddConsole={handleAddConsole} />}
             />
           </>
         ) : (
