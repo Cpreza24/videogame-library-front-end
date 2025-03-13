@@ -1,8 +1,8 @@
 const Landing = () => {
   return (
     <main>
-      <h1>Hello, you are on the landing page for visitors.</h1>
-      <p>Sign up now, or sign in to see your super secret dashboard!</p>
+      <h1>Game Library</h1>
+      <p>Sign up now, or sign in to start loging your games and consoles!</p>
     </main>
   );
 };
