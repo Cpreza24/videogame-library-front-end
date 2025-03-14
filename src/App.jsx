@@ -8,6 +8,7 @@ import Landing from './components/Landing/Landing';
 import Dashboard from './components/Dashboard/Dashboard';
 import ConsoleList from './components/ConsoleList/ConsoleList';
 import ConsoleForm from './components/ConsoleForm/ConsoleForm';
+import ConsoleDetails from './components/ConsoleDetails/ConsoleDetails';
 import * as consoleService from './services/consoleService';
 import { UserContext } from './contexts/UserContext';
 
@@ -45,6 +46,7 @@ const App = () => {
               path='/consoles/new'
               element={<ConsoleForm handleAddConsole={handleAddConsole} />}
             />
+            <Route path='/consoles/:consoleId' element={<ConsoleDetails />} />
           </>
         ) : (
           <>

@@ -27,4 +27,15 @@ const create = async (consoleFormData) => {
   }
 };
 
-export { index, create };
+const show = async (hootId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${hootId}`, {
+      headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+    });
+    return res.json();
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
+export { index, create, show };

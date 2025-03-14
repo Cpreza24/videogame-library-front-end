@@ -9,7 +9,7 @@ function ConsoleList({ consoles }) {
       </div>
       <div>
         {consoles.map((console) => (
-          <Link key={console._id}>
+          <Link key={console._id} to={`/consoles/${console._id}`}>
             <h2>{console.name}</h2>
           </Link>
         ))}
