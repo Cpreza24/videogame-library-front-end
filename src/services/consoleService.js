@@ -54,4 +54,18 @@ async function update(consoleId, consoleFormData) {
   }
 }
 
-export { index, create, show, update };
+const deleteConsole = async (consoleId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${consoleId}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
+    return res.json();
+  } catch (err) {
+    console.log(ErrorEvent.message);
+  }
+};
+
+export { index, create, show, update, deleteConsole };

@@ -36,6 +36,14 @@ const App = () => {
     navigate(`/consoles/${consoleId}`);
   };
 
+  const handleDeleteConsole = async (consoleId) => {
+    const deletedConsole = await consoleService.deleteConsole(consoleId);
+    setConsoles(
+      consoles.filter((console) => console._id !== deletedConsole._id)
+    );
+    navigate('/consoles');
+  };
+
   useEffect(() => {
     const fetchAllConsoles = async () => {
       const consoleData = await consoleService.index();
@@ -59,7 +67,12 @@ const App = () => {
               path='/consoles/new'
               element={<ConsoleForm handleAddConsole={handleAddConsole} />}
             />
-            <Route path='/consoles/:consoleId' element={<ConsoleDetails />} />
+            <Route
+              path='/consoles/:consoleId'
+              element={
+                <ConsoleDetails handleDeleteConsole={handleDeleteConsole} />
+              }
+            />
             <Route
               path='/consoles/:consoleId/edit'
               element={

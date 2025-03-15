@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom'; // Fix incorrect import
 import { UserContext } from '../../contexts/UserContext';
 import * as consoleService from '../../services/consoleService';
 
-function ConsoleDetails() {
+function ConsoleDetails({ handleDeleteConsole }) {
   const { consoleId } = useParams();
   const [console, setConsole] = useState(null);
   const [loading, setLoading] = useState(true); // Add loading state
@@ -48,7 +48,7 @@ function ConsoleDetails() {
       </div>
       <div>
         <Link to={`/consoles/${consoleId}/edit`}>Edit</Link>
-        <button onClick={() => props.handleDeleteHoot(hootId)}>Delete</button>
+        <button onClick={() => handleDeleteConsole(consoleId)}>Delete</button>
       </div>
     </main>
   );
