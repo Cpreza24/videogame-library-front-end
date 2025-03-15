@@ -22,6 +22,12 @@ const NavBar = () => {
             <Link to='/consoles/new'>Add Console</Link>
           </li>
           <li>
+            <Link to='/games'>Games</Link>
+          </li>
+          <li>
+            <Link to='/games/new'>Add Game</Link>
+          </li>
+          <li>
             <Link to='/'>Dashboard</Link>
           </li>
           <li>

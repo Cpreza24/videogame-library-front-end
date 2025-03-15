@@ -6,8 +6,8 @@ import * as consoleService from '../../services/consoleService';
 function ConsoleDetails({ handleDeleteConsole }) {
   const { consoleId } = useParams();
   const [console, setConsole] = useState(null);
-  const [loading, setLoading] = useState(true); // Add loading state
-  const [error, setError] = useState(null); // Add error handling
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const { user } = useContext(UserContext);
 
   useEffect(() => {
@@ -30,13 +30,10 @@ function ConsoleDetails({ handleDeleteConsole }) {
     fetchConsole();
   }, [consoleId]);
 
-  // Handle loading state
   if (loading) return <p>Loading console details...</p>;
 
-  // Handle errors
   if (error) return <p>Error: {error}</p>;
 
-  // Handle case where console is still null
   if (!console) return <p>Console not found.</p>;
 
   return (

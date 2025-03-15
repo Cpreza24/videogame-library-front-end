@@ -9,6 +9,9 @@ import Dashboard from './components/Dashboard/Dashboard';
 import ConsoleList from './components/ConsoleList/ConsoleList';
 import ConsoleForm from './components/ConsoleForm/ConsoleForm';
 import ConsoleDetails from './components/ConsoleDetails/ConsoleDetails';
+import GameList from './components/GameList/GameList';
+import GameDetails from './components/GameDetails/GameDetails';
+import * as gameService from './services/gameService';
 import * as consoleService from './services/consoleService';
 import { UserContext } from './contexts/UserContext';
 
@@ -16,6 +19,7 @@ const App = () => {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
   const [consoles, setConsoles] = useState([]);
+  const [games, setGames] = useState([]);
 
   const handleAddConsole = async (consoleFormData) => {
     const newConsole = await consoleService.create(consoleFormData);
@@ -43,6 +47,14 @@ const App = () => {
     );
     navigate('/consoles');
   };
+
+  useEffect(() => {
+    const fetchAllGames = async () => {
+      const gameData = await gameService.index();
+      setGames(gameData);
+    };
+    if (user) fetchAllGames();
+  }, [user]);
 
   useEffect(() => {
     const fetchAllConsoles = async () => {
@@ -79,6 +91,8 @@ const App = () => {
                 <ConsoleForm handleUpdatedConsole={handleUpdatedConsole} />
               }
             />
+            <Route path='/games' element={<GameList games={games} />} />
+            <Route path='/games/:gameId' element={<GameDetails />} />
           </>
         ) : (
           <>
