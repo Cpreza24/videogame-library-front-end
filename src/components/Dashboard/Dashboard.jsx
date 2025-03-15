@@ -6,7 +6,7 @@ import * as userService from '../../services/userService';
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
-  const [ users, setUsers ] = useState([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -14,9 +14,9 @@ const Dashboard = () => {
         const fetchedUsers = await userService.index();
         setUsers(fetchedUsers);
       } catch (err) {
-        console.log(err)
+        console.log(err);
       }
-    }
+    };
     if (user) fetchUsers();
   }, [user]);
 
@@ -26,11 +26,7 @@ const Dashboard = () => {
       <p>
         This is the dashboard page where you can see a list of all the users.
       </p>
-      <ul>
-        {users.map(user => (
-          <li key={user._id}>{user.username}</li>
-        ))}
-      </ul>
+      <ul>{users.username}</ul>
     </main>
   );
 };
