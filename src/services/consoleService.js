@@ -27,9 +27,9 @@ const create = async (consoleFormData) => {
   }
 };
 
-const show = async (hootId) => {
+const show = async (consoleId) => {
   try {
-    const res = await fetch(`${BASE_URL}/${hootId}`, {
+    const res = await fetch(`${BASE_URL}/${consoleId}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     });
     return res.json();
@@ -38,4 +38,20 @@ const show = async (hootId) => {
   }
 };
 
-export { index, create, show };
+async function update(consoleId, consoleFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${consoleId}`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(consoleFormData),
+    });
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export { index, create, show, update };

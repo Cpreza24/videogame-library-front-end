@@ -23,6 +23,19 @@ const App = () => {
     navigate('/consoles');
   };
 
+  const handleUpdatedConsole = async (consoleId, consoleFormData) => {
+    const updatedConsole = await consoleService.update(
+      consoleId,
+      consoleFormData
+    );
+    setConsoles(
+      consoles.map((console) =>
+        consoleId === console._id ? updatedConsole : console
+      )
+    );
+    navigate(`/consoles/${consoleId}`);
+  };
+
   useEffect(() => {
     const fetchAllConsoles = async () => {
       const consoleData = await consoleService.index();
@@ -47,6 +60,12 @@ const App = () => {
               element={<ConsoleForm handleAddConsole={handleAddConsole} />}
             />
             <Route path='/consoles/:consoleId' element={<ConsoleDetails />} />
+            <Route
+              path='/consoles/:consoleId/edit'
+              element={
+                <ConsoleForm handleUpdatedConsole={handleUpdatedConsole} />
+              }
+            />
           </>
         ) : (
           <>

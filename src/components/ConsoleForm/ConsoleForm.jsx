@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import * as consoleService from '../../services/consoleService';
 
-function ConsoleForm({ handleAddConsole }) {
+function ConsoleForm({ handleAddConsole, handleUpdatedConsole }) {
   const { consoleId } = useParams();
   const [formData, setFormData] = useState({
     name: '',
@@ -17,7 +17,11 @@ function ConsoleForm({ handleAddConsole }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleAddConsole(formData);
+    if (consoleId) {
+      handleUpdatedConsole(consoleId, formData);
+    } else {
+      handleAddConsole(formData);
+    }
   };
 
   useEffect(() => {
