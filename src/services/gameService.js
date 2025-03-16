@@ -28,14 +28,40 @@ const create = async (gameFormData) => {
 };
 
 const show = async (gameId) => {
+  if (!gameId) {
+    console.error('Error: gameId is missing');
+    return null;
+  }
+
   try {
     const res = await fetch(`${BASE_URL}/${gameId}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
     });
-    return res.json();
+
+    if (!res.ok) throw new Error(`Failed to fetch game: ${res.statusText}`);
+
+    const data = await res.json();
+    return data;
   } catch (err) {
-    console.log(err.message);
+    console.error('Fetch error:', err.message);
+    return null;
   }
 };
 
-export { index, create, show };
+async function update(gameId, gameFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${gameId}`, {
+      method: 'PUT',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(gameFormData),
+    });
+    return res.json();
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export { index, create, show, update };

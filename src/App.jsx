@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router';
+import { Routes, Route, useNavigate, NavigationType } from 'react-router';
 
 import NavBar from './components/NavBar/NavBar';
 import SignUpForm from './components/SignUpForm/SignUpForm';
@@ -11,6 +11,7 @@ import ConsoleForm from './components/ConsoleForm/ConsoleForm';
 import ConsoleDetails from './components/ConsoleDetails/ConsoleDetails';
 import GameList from './components/GameList/GameList';
 import GameDetails from './components/GameDetails/GameDetails';
+import GameForm from './components/GameForm/GameForm';
 import * as gameService from './services/gameService';
 import * as consoleService from './services/consoleService';
 import { UserContext } from './contexts/UserContext';
@@ -46,6 +47,18 @@ const App = () => {
       consoles.filter((console) => console._id !== deletedConsole._id)
     );
     navigate('/consoles');
+  };
+
+  const handleAddGame = async (gameFormData) => {
+    const newGame = await gameService.create(gameFormData);
+    setGames([newGame, ...games]);
+    navigate('/games');
+  };
+
+  const handleUpdatedGame = async (gameId, gameFormData) => {
+    const updatedGame = await gameService.update(gameId, gameFormData);
+    setGames(games.map((game) => (gameId === game._id ? updatedGame : game)));
+    navigate(`/games/${gameId}`);
   };
 
   useEffect(() => {
@@ -92,7 +105,15 @@ const App = () => {
               }
             />
             <Route path='/games' element={<GameList games={games} />} />
+            <Route
+              path='/games/new'
+              element={<GameForm handleAddGame={handleAddGame} />}
+            />
             <Route path='/games/:gameId' element={<GameDetails />} />
+            <Route
+              path='/games/:gameId/edit'
+              element={<GameForm handleUpdatedGame={handleUpdatedGame} />}
+            />
           </>
         ) : (
           <>
