@@ -64,4 +64,18 @@ async function update(gameId, gameFormData) {
   }
 }
 
-export { index, create, show, update };
+const deleteGame = async (gameId) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${gameId}`, {
+      method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
+    return res.json();
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
+export { index, create, show, update, deleteGame };

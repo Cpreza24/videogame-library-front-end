@@ -61,6 +61,12 @@ const App = () => {
     navigate(`/games/${gameId}`);
   };
 
+  const handleDeleteGame = async (gameId) => {
+    const deletedGame = await gameService.deleteGame(gameId);
+    setGames(games.filter((game) => game._id !== deletedGame._id));
+    navigate('/games');
+  };
+
   useEffect(() => {
     const fetchAllGames = async () => {
       const gameData = await gameService.index();
@@ -109,7 +115,10 @@ const App = () => {
               path='/games/new'
               element={<GameForm handleAddGame={handleAddGame} />}
             />
-            <Route path='/games/:gameId' element={<GameDetails />} />
+            <Route
+              path='/games/:gameId'
+              element={<GameDetails handleDeleteGame={handleDeleteGame} />}
+            />
             <Route
               path='/games/:gameId/edit'
               element={<GameForm handleUpdatedGame={handleUpdatedGame} />}
