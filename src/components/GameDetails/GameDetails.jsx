@@ -35,13 +35,13 @@ function GameDetails({ handleDeleteGame }) {
   return (
     <main>
       <div>
-        <h1>game details</h1>
+        <h1>Game details</h1>
       </div>
       <div>
-        <h2>{game.title}</h2>
-        <p>{game.console}</p>
-        <p>{game.rating}</p>
-        <p>{game.purchaseDate}</p>
+        <h2>Title: {game.title}</h2>
+        <p>Console: {game.console}</p>
+        <p>Rating: {game.rating}</p>
+        <p>Purchased: {game.purchaseDate}</p>
       </div>
       <div>
         <Link to={`/games/${gameId}/edit`}>Edit</Link>

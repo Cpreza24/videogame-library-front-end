@@ -16,6 +16,9 @@ const NavBar = () => {
       {user ? (
         <ul>
           <li>
+            <Link to='/'>Dashboard</Link>
+          </li>
+          <li>
             <Link to='/consoles'>Consoles</Link>
           </li>
           <li>
@@ -27,9 +30,7 @@ const NavBar = () => {
           <li>
             <Link to='/games/new'>Add Game</Link>
           </li>
-          <li>
-            <Link to='/'>Dashboard</Link>
-          </li>
+
           <li>
             <Link to='/' onClick={handleSignOut}>
               Sign Out
@@ -46,6 +47,9 @@ const NavBar = () => {
           </li>
           <li>
             <Link to='/sign-up'>Sign Up</Link>
+          </li>
+          <li>
+            <Link to='/about'>About</Link>
           </li>
         </ul>
       )}

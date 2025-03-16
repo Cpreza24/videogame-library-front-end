@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 import { UserContext } from '../../contexts/UserContext';
 
@@ -24,9 +25,11 @@ const Dashboard = () => {
     <main>
       <h1>Welcome, {user.username}</h1>
       <p>
-        This is the dashboard page where you can see a list of all the users.
+        This is the dashboard page where you can see a list of users. Click on a
+        user to see their videogame library. Use the links to log your own and
+        start sharing your games!
       </p>
-      <ul>{users.username}</ul>
+      <Link>{users.username}</Link>
     </main>
   );
 };

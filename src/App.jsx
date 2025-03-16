@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import { Routes, Route, useNavigate, NavigationType } from 'react-router';
 
 import NavBar from './components/NavBar/NavBar';
+import AboutPage from './components/AboutPage/AboutPage';
 import SignUpForm from './components/SignUpForm/SignUpForm';
 import SignInForm from './components/SignInForm/SignInForm';
 import Landing from './components/Landing/Landing';
@@ -128,6 +129,7 @@ const App = () => {
           <>
             <Route path='/sign-up' element={<SignUpForm />} />
             <Route path='/sign-in' element={<SignInForm />} />
+            <Route path='/about' element={<AboutPage />} />
           </>
         )}
       </Routes>
