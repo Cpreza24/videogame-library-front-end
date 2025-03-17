@@ -89,7 +89,11 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
-        {user ? (
+        <Route path='/sign-up' element={<SignUpForm />} />
+        <Route path='/sign-in' element={<SignInForm />} />
+        <Route path='/about' element={<AboutPage />} />
+
+        {user && (
           <>
             <Route
               path='/consoles'
@@ -125,13 +129,8 @@ const App = () => {
               element={<GameForm handleUpdatedGame={handleUpdatedGame} />}
             />
           </>
-        ) : (
-          <>
-            <Route path='/sign-up' element={<SignUpForm />} />
-            <Route path='/sign-in' element={<SignInForm />} />
-            <Route path='/about' element={<AboutPage />} />
-          </>
         )}
+        <Route path='*' element={<h1>Page Not Found</h1>} />
       </Routes>
     </>
   );
