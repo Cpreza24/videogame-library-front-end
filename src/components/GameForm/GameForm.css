@@ -1,0 +1,15 @@
+.submit-btn {
+  width: 100px;
+  border: none;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  font-family: 'Marcellus', serif;
+  padding: 10px 20px;
+  background-color: #0050fc; /* Button color */
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}

@@ -1,33 +1,52 @@
-.edit-btn {
-  text-decoration: none;
-  color: white;
-  font-family: 'Marcellus', serif;
-  padding: 10px 20px;
-  background-color: #535351; /* Button color */
-  color: white;
-  border-radius: 5px;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.3s;
+.sign-in-btn-container {
+  margin: 30px;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.delete-btn {
-  text-decoration: none;
-  color: white;
-  font-family: 'Marcellus', serif;
-  padding: 10px 20px;
-  background-color: #535351; /* Button color */
-  color: white;
-  border-radius: 5px;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.3s;
+.sign-in-btn {
+  width: 100px;
   border: none;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  font-family: 'Marcellus', serif;
+  padding: 10px 20px;
+  background-color: #0050fc;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.btn-container {
+.sign-in-btn:hover {
+  background-color: #03205f;
+}
+
+.cancel-sign-in-btn {
+  width: 100px;
+  border: none;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  font-family: 'Marcellus', serif;
+  padding: 10px 20px;
+  background-color: #e41010;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cancel-sign-in-btn:hover {
+  background-color: #880303;
+}
+
+.input-container {
   display: flex;
   justify-content: center;
-  margin: 10px;
-  justify-content: space-evenly;
+  flex-direction: column;
+  margin: auto;
 }

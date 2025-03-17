@@ -1,0 +1,40 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  margin: auto;
+}
+
+input {
+  border: none;
+  height: 30px;
+  margin: 15px;
+}
+
+label {
+  font-family: 'Marcellus', serif;
+  font-size: 1.5rem;
+}
+
+.submit-btn {
+  width: 100px;
+  border: none;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  font-family: 'Marcellus', serif;
+  padding: 10px 20px;
+  background-color: #0050fc; /* Button color */
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import * as consoleService from '../../services/consoleService';
+import './ConsoleForm.css';
 
 function ConsoleForm({ handleAddConsole, handleUpdatedConsole }) {
   const { consoleId } = useParams();
@@ -34,9 +35,9 @@ function ConsoleForm({ handleAddConsole, handleUpdatedConsole }) {
   return (
     <main>
       <div>
-        <h1>console form</h1>
+        <h1>Console Form</h1>
       </div>
-      <div>
+      <div className='form-container'>
         <form onSubmit={handleSubmit}>
           <label htmlFor='name-input'>Name: </label>
           <input
@@ -66,7 +67,9 @@ function ConsoleForm({ handleAddConsole, handleUpdatedConsole }) {
             value={formData.purchaseDate}
             onChange={handleChange}
           />
-          <button type='submit'>Submit</button>
+          <button className='submit-btn' type='submit'>
+            Submit
+          </button>
         </form>
       </div>
     </main>

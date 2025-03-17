@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import * as gameService from '../../services/gameService';
+import './GameForm.css';
 
 function GameForm({ handleAddGame, handleUpdatedGame }) {
   const { gameId } = useParams();
@@ -95,7 +96,9 @@ function GameForm({ handleAddGame, handleUpdatedGame }) {
             value={formData.purchaseDate}
             onChange={handleChange}
           />
-          <button type='submit'>Submit</button>
+          <button className='submit-btn' type='submit'>
+            Submit
+          </button>
         </form>
       </div>
     </main>

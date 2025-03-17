@@ -1,33 +1,54 @@
-.edit-btn {
-  text-decoration: none;
-  color: white;
-  font-family: 'Marcellus', serif;
-  padding: 10px 20px;
-  background-color: #535351; /* Button color */
-  color: white;
-  border-radius: 5px;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.delete-btn {
-  text-decoration: none;
-  color: white;
-  font-family: 'Marcellus', serif;
-  padding: 10px 20px;
-  background-color: #535351; /* Button color */
-  color: white;
-  border-radius: 5px;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.3s;
-  border: none;
-}
-
-.btn-container {
+.form-container {
   display: flex;
   justify-content: center;
-  margin: 10px;
+  flex-direction: column;
+  margin: auto;
+}
+
+.sign-up-btn {
+  width: 100px;
+  border: none;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  font-family: 'Marcellus', serif;
+  padding: 10px 20px;
+  background-color: #0050fc;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.cancel-btn {
+  width: 100px;
+  border: none;
+  margin: auto;
+  text-decoration: none;
+  color: white;
+  font-family: 'Marcellus', serif;
+  padding: 10px 20px;
+  background-color: #e41010;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn-container {
+  margin: 30px;
+  display: flex;
   justify-content: space-evenly;
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+label {
+  font-size: 1rem;
 }
