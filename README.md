@@ -4,10 +4,9 @@
 
 ## Technologies
 
+![Static Badge](https://img.shields.io/badge/React-blue?style=plastic)
 ![Static Badge](https://img.shields.io/badge/Express-green?style=plastic)
 ![Static Badge](https://img.shields.io/badge/MongoDB-%2347A248?style=plastic)
-
-## Attributions
 
 ## Attributions
 
