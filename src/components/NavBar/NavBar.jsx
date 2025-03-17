@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { Link } from 'react-router';
+import './NavBar.css';
 
 import { UserContext } from '../../contexts/UserContext';
 
@@ -16,23 +17,33 @@ const NavBar = () => {
       {user ? (
         <ul>
           <li>
-            <Link to='/'>Dashboard</Link>
+            <Link className='nav-link' to='/'>
+              Dashboard
+            </Link>
           </li>
           <li>
-            <Link to='/consoles'>Consoles</Link>
+            <Link className='nav-link' to='/consoles'>
+              Consoles
+            </Link>
           </li>
           <li>
-            <Link to='/consoles/new'>Add Console</Link>
+            <Link className='nav-link' to='/consoles/new'>
+              Add Console
+            </Link>
           </li>
           <li>
-            <Link to='/games'>Games</Link>
+            <Link className='nav-link' to='/games'>
+              Games
+            </Link>
           </li>
           <li>
-            <Link to='/games/new'>Add Game</Link>
+            <Link className='nav-link' to='/games/new'>
+              Add Game
+            </Link>
           </li>
 
           <li>
-            <Link to='/' onClick={handleSignOut}>
+            <Link className='nav-link' to='/' onClick={handleSignOut}>
               Sign Out
             </Link>
           </li>
@@ -40,16 +51,24 @@ const NavBar = () => {
       ) : (
         <ul>
           <li>
-            <Link to='/'>Home</Link>
+            <Link className='nav-link' to='/'>
+              Home
+            </Link>
           </li>
           <li>
-            <Link to='/sign-in'>Sign In</Link>
+            <Link className='nav-link' to='/sign-in'>
+              Sign In
+            </Link>
           </li>
           <li>
-            <Link to='/sign-up'>Sign Up</Link>
+            <Link className='nav-link' to='/sign-up'>
+              Sign Up
+            </Link>
           </li>
           <li>
-            <Link to='/about'>About</Link>
+            <Link className='nav-link' to='/about'>
+              About
+            </Link>
           </li>
         </ul>
       )}

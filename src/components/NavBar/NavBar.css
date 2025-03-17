@@ -1,0 +1,47 @@
+Nav {
+  background-color: rgb(91, 79, 255);
+  height: 50px;
+  width: 100%;
+  position: fixed; /* Fixes it at the top */
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the nav items */
+  padding: 0;
+  z-index: 1000; /* Ensures it stays on top of other elements */
+}
+
+ul {
+  display: flex;
+  justify-content: space-around; /* Spaces out the items evenly */
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li {
+  padding: 10px 20px;
+  background-color: #535351; /* Button color */
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+li:hover {
+  background-color: #2b2b2c;
+}
+
+/* Ensure content below doesn't get hidden behind the fixed nav */
+body {
+  padding-top: 50px; /* Prevents content from being hidden under the nav */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-family: 'Marcellus', serif;
+}
