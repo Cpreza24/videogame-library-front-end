@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom'; // Fix incorrect import
 import { UserContext } from '../../contexts/UserContext';
 import * as consoleService from '../../services/consoleService';
+import './ConsoleDetails.css';
 
 function ConsoleDetails({ handleDeleteConsole }) {
   const { consoleId } = useParams();
@@ -43,9 +44,16 @@ function ConsoleDetails({ handleDeleteConsole }) {
         <p>Make: {console.make}</p>
         <p>Purchase Date: {console.purchaseDate}</p>
       </div>
-      <div>
-        <Link to={`/consoles/${consoleId}/edit`}>Edit</Link>
-        <button onClick={() => handleDeleteConsole(consoleId)}>Delete</button>
+      <div className='btn-container'>
+        <Link className='edit-btn' to={`/consoles/${consoleId}/edit`}>
+          Edit
+        </Link>
+        <button
+          className='delete-btn'
+          onClick={() => handleDeleteConsole(consoleId)}
+        >
+          Delete
+        </button>
       </div>
     </main>
   );

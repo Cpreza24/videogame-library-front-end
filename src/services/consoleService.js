@@ -64,7 +64,7 @@ const deleteConsole = async (consoleId) => {
     });
     return res.json();
   } catch (err) {
-    console.log(ErrorEvent.message);
+    console.log(err.message);
   }
 };
 

@@ -1,6 +1,6 @@
 Nav {
-  background-color: rgb(91, 79, 255);
-  height: 50px;
+  background-color: #0f3057;
+  height: 100px;
   width: 100%;
   position: fixed; /* Fixes it at the top */
   top: 0;
