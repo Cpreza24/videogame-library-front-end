@@ -4,9 +4,11 @@
 
 ## Technologies
 
-![Static Badge](https://img.shields.io/badge/React-blue?style=plastic)
-![Static Badge](https://img.shields.io/badge/Express-green?style=plastic)
-![Static Badge](https://img.shields.io/badge/MongoDB-%2347A248?style=plastic)
+![Static Badge](https://img.shields.io/badge/React-blue?style=plastic&logo=react)
+![Static Badge](https://img.shields.io/badge/NodeJS-%235FA04E?style=plastic&logo=Node.js&logoColor=black)
+![Static Badge](https://img.shields.io/badge/NPM-%23CB3837?style=plastic&logo=NPM&logoColor=black)
+![Static Badge](https://img.shields.io/badge/Express-yellow?style=plastic&logo=express&logoColor=black)
+![Static Badge](https://img.shields.io/badge/MongoDB-%2347A248?style=plastic&logo=MongoDB&logoColor=black)
 
 ## Attributions
 
