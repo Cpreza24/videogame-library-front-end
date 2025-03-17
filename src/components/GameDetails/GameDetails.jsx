@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import * as gameService from '../../services/gameService';
+import './GameDetails.css';
 
 function GameDetails({ handleDeleteGame }) {
   const { gameId } = useParams();
@@ -34,18 +35,20 @@ function GameDetails({ handleDeleteGame }) {
 
   return (
     <main>
+      <div></div>
       <div>
-        <h1>Game details</h1>
-      </div>
-      <div>
-        <h2>Title: {game.title}</h2>
+        <h1>{game.title}</h1>
         <p>Console: {game.console}</p>
         <p>Rating: {game.rating}</p>
         <p>Purchased: {game.purchaseDate}</p>
       </div>
-      <div>
-        <Link to={`/games/${gameId}/edit`}>Edit</Link>
-        <button onClick={() => handleDeleteGame(gameId)}>Delete</button>
+      <div className='btn-container'>
+        <Link className='edit-btn' to={`/games/${gameId}/edit`}>
+          Edit
+        </Link>
+        <button className='delete-btn' onClick={() => handleDeleteGame(gameId)}>
+          Delete
+        </button>
       </div>
     </main>
   );

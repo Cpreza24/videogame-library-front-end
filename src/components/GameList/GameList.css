@@ -1,0 +1,31 @@
+.game-link {
+  text-decoration: none;
+  color: #4d4d4d;
+  display: flex;
+  justify-content: center;
+  font-family: 'Marcellus', serif;
+  font-size: 1.5rem;
+}
+
+.game-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  width: auto;
+}
+
+.game-link:hover {
+  color: #a5a5a7;
+}

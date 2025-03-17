@@ -10,15 +10,19 @@ function ConsoleList({ consoles }) {
         <p>Click a console to see more information</p>
       </div>
       <div className='console-container'>
-        {consoles.map((console) => (
-          <Link
-            className='console-link'
-            key={console._id}
-            to={`/consoles/${console._id}`}
-          >
-            {console.name}
-          </Link>
-        ))}
+        {consoles.length === 0 ? (
+          <p>No consoles saved</p>
+        ) : (
+          consoles.map((console) => (
+            <Link
+              className='console-link'
+              key={console._id}
+              to={`/consoles/${console._id}`}
+            >
+              {console.name}
+            </Link>
+          ))
+        )}
       </div>
     </main>
   );

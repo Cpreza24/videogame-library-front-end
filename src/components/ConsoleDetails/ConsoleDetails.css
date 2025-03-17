@@ -3,7 +3,7 @@
   color: white;
   font-family: 'Marcellus', serif;
   padding: 10px 20px;
-  background-color: #535351; /* Button color */
+  background-color: #1100ff;
   color: white;
   border-radius: 5px;
   text-align: center;
@@ -11,12 +11,16 @@
   transition: background 0.3s;
 }
 
+.edit-btn:hover {
+  background-color: #0d02a7;
+}
+
 .delete-btn {
   text-decoration: none;
   color: white;
   font-family: 'Marcellus', serif;
   padding: 10px 20px;
-  background-color: #535351; /* Button color */
+  background-color: #ff0202;
   color: white;
   border-radius: 5px;
   text-align: center;
@@ -30,4 +34,8 @@
   justify-content: center;
   margin: 10px;
   justify-content: space-evenly;
+}
+
+.delete-btn:hover {
+  background-color: #960202;
 }
