@@ -13,6 +13,9 @@ Running React on the front-end and Express for the back-end. The front-end is de
 ![Static Badge](https://img.shields.io/badge/NPM-%23CB3837?style=plastic&logo=NPM&logoColor=black)
 ![Static Badge](https://img.shields.io/badge/Express-yellow?style=plastic&logo=express&logoColor=black)
 ![Static Badge](https://img.shields.io/badge/MongoDB-%2347A248?style=plastic&logo=MongoDB&logoColor=black)
+![Static Badge](https://img.shields.io/badge/heroku-430098?style=plastic&logo=heroku)
+![Static Badge](https://img.shields.io/badge/netlify-00C7B7?style=plastic&logo=netlify&logoColor=black)
+
 
 ## Attributions
 
