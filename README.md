@@ -3,6 +3,7 @@
 ## An app to log videogames or consoles and stores them in a mongoDB database. 
 
 Running React on the front-end and Express for the back-end. The front-end is deployed on Heroku and the back-end on Netlify.
+
 [Check it out here](https://videogame-library.netlify.app/) 
 
 ## Technologies
