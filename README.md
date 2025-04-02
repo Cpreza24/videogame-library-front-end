@@ -1,6 +1,6 @@
 # Videogame Library App
 
-## An app to log videogames or consoles and stores them in a mongoDB database. Uses React for the fron-end and Express for the back-end
+## An app to log videogames or consoles and stores them in a mongoDB database. Uses React for the fron-end and Express for the back-end. [Try it out here](https://videogame-library.netlify.app/) 
 
 ## Technologies
 
@@ -17,6 +17,7 @@
 ## App Images
 
 ![Image of the app console list page](public/images/console_list.PNG)
+
 
 ## Future Updates
 
