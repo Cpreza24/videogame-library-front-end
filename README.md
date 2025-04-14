@@ -1,6 +1,10 @@
 # Videogame Library App
 
-## An app to log videogames or consoles and stores them in a mongoDB database. Uses React for the fron-end and Express for the back-end
+## An app to log videogames or consoles and stores them in a mongoDB database. 
+
+Running React on the front-end and Express for the back-end. The front-end is deployed on Heroku and the back-end on Netlify.
+
+[Check it out here](https://videogame-library.netlify.app/) 
 
 ## Technologies
 
@@ -9,6 +13,9 @@
 ![Static Badge](https://img.shields.io/badge/NPM-%23CB3837?style=plastic&logo=NPM&logoColor=black)
 ![Static Badge](https://img.shields.io/badge/Express-yellow?style=plastic&logo=express&logoColor=black)
 ![Static Badge](https://img.shields.io/badge/MongoDB-%2347A248?style=plastic&logo=MongoDB&logoColor=black)
+![Static Badge](https://img.shields.io/badge/heroku-430098?style=plastic&logo=heroku)
+![Static Badge](https://img.shields.io/badge/netlify-00C7B7?style=plastic&logo=netlify&logoColor=black)
+
 
 ## Attributions
 
@@ -17,6 +24,7 @@
 ## App Images
 
 ![Image of the app console list page](public/images/console_list.PNG)
+
 
 ## Future Updates
 
